@@ -81,8 +81,27 @@ LEFT JOIN sightings AS si ON s.species_id = si.species_id
 WHERE si.species_id IS NULL;
 
 
+-- Problem - 6:
+SELECT common_name
+FROM species AS s
+LEFT JOIN sightings AS si ON s.species_id = si.species_id
 
 
+
+-- Problem - 6:
+SELECT common_name, sighting_time, name
+FROM sightings
+JOIN rangers USING(ranger_id)
+JOIN species USING(species_id)
+ORDER BY sighting_time DESC
+LIMIT 2;
+
+
+
+
+
+
+SELECT * FROM rangers;
 SELECT * FROM species;
 SELECT * FROM sightings;
 
