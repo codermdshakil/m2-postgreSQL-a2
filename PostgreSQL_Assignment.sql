@@ -13,7 +13,7 @@ CREATE Table species(
     scientific_name VARCHAR(100) NOT NULL,
     discovery_date DATE,
     conservation_status VARCHAR(70) CHECK(
-        conservation_status IN ('Endangered', 'Vulnerable')
+        conservation_status IN ('Endangered', 'Vulnerable', 'Historic')
     )
 );
 
@@ -94,10 +94,18 @@ LIMIT 2;
 
 -- Problem - 7:
 
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01';
+
+
 
 SELECT * FROM rangers;
+
 SELECT * FROM species;
+
 SELECT * FROM sightings;
+
 
 
 
