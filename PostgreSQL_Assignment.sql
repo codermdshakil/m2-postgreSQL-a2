@@ -73,8 +73,19 @@ GROUP BY r.ranger_id
 ORDER BY r.name ASC;
 
 
+-- Problem - 5:
 
- 
+SELECT common_name
+FROM species AS s
+LEFT JOIN sightings AS si ON s.species_id = si.species_id
+WHERE si.species_id IS NULL;
+
+
+
+
+SELECT * FROM species;
+SELECT * FROM sightings;
+
 
 
 
