@@ -100,11 +100,22 @@ WHERE discovery_date < '1800-01-01';
 
 
 
-SELECT * FROM rangers;
+-- Problem - 8:
 
-SELECT * FROM species;
+SELECT sighting_id,
+  CASE 
+    WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN EXTRACT(HOUR FROM sighting_time) >= 12 AND EXTRACT(HOUR FROM sighting_time) <= 17 THEN 'Afternoon'
+    ELSE 'Evening'
+  END as time_of_day
+FROM sightings;
 
-SELECT * FROM sightings;
+
+
+
+
+
+
 
 
 
