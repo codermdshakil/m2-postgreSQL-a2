@@ -7,3 +7,6 @@
 ### 5. [Explain the purpose of the `WHERE` clause in a `SELECT` statement.](./blogs/5-select-vs-where.md)
 
 
+
+
+## Thank You 😊❤️
