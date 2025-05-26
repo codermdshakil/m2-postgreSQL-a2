@@ -89,8 +89,6 @@ LEFT JOIN sightings AS si ON s.species_id = si.species_id
 WHERE si.species_id IS NULL;
 
 
-
-
 -- Problem - 6:
 SELECT common_name, sighting_time, name
 FROM sightings
@@ -105,7 +103,6 @@ LIMIT 2;
 UPDATE species
 SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01';
-
 
 
 -- Problem - 8:
