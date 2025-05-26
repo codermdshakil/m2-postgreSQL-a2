@@ -1,6 +1,7 @@
 -- Active: 1747835496638@@127.0.0.1@5432@ph
 
 -- creating tables
+
 CREATE Table rangers(
     ranger_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -30,6 +31,8 @@ CREATE TABLE sightings (
 -- insert rangers table data
 
 INSERT INTO rangers(name, region) VALUES('Alice Green', 'Northen Hills'),('Bob White', 'River Delta '),('Carol King', 'Mountain Range');
+
+-- insert species table data
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status)
 VALUES
@@ -116,7 +119,6 @@ DELETE FROM rangers
 WHERE ranger_id NOT IN (
   SELECT DISTINCT ranger_id FROM sightings
 );
-
 
 
 
