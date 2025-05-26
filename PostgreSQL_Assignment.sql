@@ -1,12 +1,15 @@
 -- Active: 1747835496638@@127.0.0.1@5432@ph
 
--- creating tables
+-- create ranger table
 
 CREATE Table rangers(
     ranger_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     region VARCHAR(70) NOT NUll
 );
+
+
+-- create species table
 
 CREATE Table species(
     species_id SERIAL PRIMARY KEY,
@@ -17,6 +20,8 @@ CREATE Table species(
         conservation_status IN ('Endangered', 'Vulnerable', 'Historic')
     )
 );
+
+-- create sightings table
 
 CREATE TABLE sightings (
     sighting_id SERIAL PRIMARY KEY,
@@ -119,15 +124,5 @@ DELETE FROM rangers
 WHERE ranger_id NOT IN (
   SELECT DISTINCT ranger_id FROM sightings
 );
-
-
-
-
-
-
-
-
-
-
 
 
